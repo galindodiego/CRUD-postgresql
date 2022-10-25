@@ -2,7 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package vistas;
+package VIEW;
+
+import DAO.Crudsql;
+import DTO.FuncionarioDTO;
 
 /**
  *
@@ -43,6 +46,11 @@ public class cadastrar extends javax.swing.JFrame {
         jLabel3.setText("FUNÇÃO");
 
         btncadastrar.setText("CADASTRAR");
+        btncadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncadastrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -89,6 +97,10 @@ public class cadastrar extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btncadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncadastrarActionPerformed
+        insertFuncionario();        // TODO add your handling code here:
+    }//GEN-LAST:event_btncadastrarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -133,4 +145,14 @@ public class cadastrar extends javax.swing.JFrame {
     private javax.swing.JTextField txtnome;
     private javax.swing.JTextField txtsobrenome;
     // End of variables declaration//GEN-END:variables
+
+
+    private void insertFuncionario(){
+        FuncionarioDTO objFuncionarioDto = new FuncionarioDTO();
+        objFuncionarioDto.setNome(txtnome.getText());
+        objFuncionarioDto.setSobrenome(txtsobrenome.getText());
+        objFuncionarioDto.setFuncao(txtfuncao.getText());
+        Crudsql crud = new Crudsql();
+        crud.insert(objFuncionarioDto);
+    }
 }

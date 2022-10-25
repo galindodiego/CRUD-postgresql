@@ -2,10 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package vistas;
+package VIEW;
 
-import sql.ConexaoSql;
-import vistas.cadastrar;
+import DAO.ConexaoSql;
 /**
  *
  * @author Diego
@@ -73,9 +72,9 @@ public class login extends javax.swing.JFrame {
 
     private void btnconectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnconectarActionPerformed
         conectar();
-        new cadastrar().setVisible(true);
-//        cadastrar cad = new cadastrar();
-//        cad.setVisible(true);
+        cadastrar cad = new cadastrar();
+        cad.setVisible(true);
+        cad.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnconectarActionPerformed
 
     private void btndesconectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndesconectarActionPerformed
