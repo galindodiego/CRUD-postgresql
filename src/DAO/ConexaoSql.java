@@ -35,7 +35,7 @@ public class ConexaoSql {
         try {
             Class.forName("org.postgresql.Driver");
             conn = DriverManager.getConnection(url, usuario, password);
-            JOptionPane.showMessageDialog(null, "Conectado", "conexão", JOptionPane.INFORMATION_MESSAGE);
+      //    JOptionPane.showMessageDialog(null, "Conectado", "conexão", JOptionPane.INFORMATION_MESSAGE);
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(null, "Error ao Conectar", erro + "conexão", JOptionPane.ERROR_MESSAGE);
         }

@@ -8,7 +8,8 @@ package DTO;
  *
  * @author Diego
  */
-public class FuncionarioDTO {
+public class EmpregadoDTO {
+    private int idempregado;
     private String nome;
     private String sobrenome;
     private String funcao;
@@ -53,6 +54,20 @@ public class FuncionarioDTO {
      */
     public void setFuncao(String funcao) {
         this.funcao = funcao;
+    }
+
+    /**
+     * @return the idempregado
+     */
+    public int getIdempregado() {
+        return idempregado;
+    }
+
+    /**
+     * @param idempregado the idempregado to set
+     */
+    public void setIdempregado(int idempregado) {
+        this.idempregado = idempregado;
     }
     
     

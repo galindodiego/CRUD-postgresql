@@ -5,7 +5,7 @@
 package VIEW;
 
 import DAO.Crudsql;
-import DTO.FuncionarioDTO;
+import DTO.EmpregadoDTO;
 
 /**
  *
@@ -36,6 +36,8 @@ public class cadastrar extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         btncadastrar = new javax.swing.JButton();
+        btnPesquisar = new javax.swing.JButton();
+        btnvoltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,6 +54,20 @@ public class cadastrar extends javax.swing.JFrame {
             }
         });
 
+        btnPesquisar.setText("PESQUISAR");
+        btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesquisarActionPerformed(evt);
+            }
+        });
+
+        btnvoltar.setText("VOLTAR");
+        btnvoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnvoltarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -59,20 +75,28 @@ public class cadastrar extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3))
+                                .addGap(26, 26, 26)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtsobrenome, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtnome, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtfuncao, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(89, 89, 89)
+                                .addComponent(btncadastrar)))
+                        .addGap(0, 127, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtsobrenome, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtnome, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtfuncao, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(89, 89, 89)
-                        .addComponent(btncadastrar)))
-                .addContainerGap(133, Short.MAX_VALUE))
+                        .addComponent(btnvoltar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnPesquisar)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,15 +115,31 @@ public class cadastrar extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addGap(42, 42, 42)
                 .addComponent(btncadastrar)
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnPesquisar)
+                    .addComponent(btnvoltar))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btncadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncadastrarActionPerformed
-        insertFuncionario();        // TODO add your handling code here:
+        insertFuncionario();
     }//GEN-LAST:event_btncadastrarActionPerformed
+
+    private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
+        pesquisar objpesquisar = new pesquisar();
+        objpesquisar.setVisible(true);
+        objpesquisar.setLocationRelativeTo(null);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnPesquisarActionPerformed
+
+    private void btnvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvoltarActionPerformed
+     this.setVisible(true);
+     
+    }//GEN-LAST:event_btnvoltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -137,7 +177,9 @@ public class cadastrar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnPesquisar;
     private javax.swing.JButton btncadastrar;
+    private javax.swing.JButton btnvoltar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -148,11 +190,11 @@ public class cadastrar extends javax.swing.JFrame {
 
 
     private void insertFuncionario(){
-        FuncionarioDTO objFuncionarioDto = new FuncionarioDTO();
+        EmpregadoDTO objFuncionarioDto = new EmpregadoDTO();
         objFuncionarioDto.setNome(txtnome.getText());
         objFuncionarioDto.setSobrenome(txtsobrenome.getText());
         objFuncionarioDto.setFuncao(txtfuncao.getText());
-        Crudsql crud = new Crudsql();
-        crud.insert(objFuncionarioDto);
+        Crudsql crudInsert = new Crudsql();
+        crudInsert.insert(objFuncionarioDto);
     }
 }
