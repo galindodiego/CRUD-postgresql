@@ -137,7 +137,10 @@ public class cadastrar extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPesquisarActionPerformed
 
     private void btnvoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvoltarActionPerformed
-     this.setVisible(true);
+     this.setVisible(false);
+     login objLogin = new login();
+     objLogin.setVisible(true);
+     objLogin.setLocationRelativeTo(null);
      
     }//GEN-LAST:event_btnvoltarActionPerformed
 

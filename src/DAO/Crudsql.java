@@ -4,13 +4,12 @@
  */
 package DAO;
 
-import DTO.EmpregadoDTO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
 import java.sql.ResultSet;
 import DTO.EmpregadoDTO;
-import VIEW.pesquisar;
+
 
 /**
  *
@@ -22,7 +21,9 @@ public class Crudsql extends ConexaoSql {
     ConexaoSql con = new ConexaoSql();
     Connection conn;
     ResultSet rs;
-   // EmpregadoDTO objEmpregadoDto;
+    
+    
+   
 
     public void insert(EmpregadoDTO objEmpregadoDto) {
         try {
@@ -35,9 +36,11 @@ public class Crudsql extends ConexaoSql {
             pstm.setString(3, objEmpregadoDto.getFuncao());
             pstm.execute();
             pstm.close();
+          
             JOptionPane.showMessageDialog(null, "Empregado registrado");
         } catch (Exception erro) {
             JOptionPane.showMessageDialog(null, "Error ao cadastrar Empregado " + erro);
+            
         }
     }
 
